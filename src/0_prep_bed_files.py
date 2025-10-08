@@ -18,18 +18,18 @@ import pandas as pd
 from tqdm import tqdm
 
 
-gene_list_path = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/initial/testis_genes.txt"  # symbols in your file
+gene_list_path = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/initial/muscle_genes.txt"  # symbols in your file
 mane_path      = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/initial/MANE.GRCh38.v1.4.summary.txt"
-eqtl_parquet   = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/initial/Testis.v10.eQTLs.signif_pairs.parquet"
+eqtl_parquet   = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/initial/Muscle_Skeletal.v10.eQTLs.signif_pairs.parquet"
 
 out_dir        = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/intermediate"
 os.makedirs(out_dir, exist_ok=True)
 
-out_bed_tss2   = os.path.join(out_dir, "testis_tss±2kb.bed")
-out_bed_tss10  = os.path.join(out_dir, "testis_tss±10kb.bed")
-out_bed_span25 = os.path.join(out_dir, "testis_genespan±25kb.bed")
-out_bed_target = os.path.join(out_dir, "testis_target_regions_merged.bed")
-out_qc_tsv     = os.path.join(out_dir, "testis_target_regions_qc.tsv")
+out_bed_tss2   = os.path.join(out_dir, "muscle_skeletal_tss±2kb.bed")
+out_bed_tss10  = os.path.join(out_dir, "muscle_skeletal_tss±10kb.bed")
+out_bed_span25 = os.path.join(out_dir, "muscle_skeletal_genespan±25kb.bed")
+out_bed_target = os.path.join(out_dir, "muscle_skeletal_target_regions_merged.bed")
+out_qc_tsv     = os.path.join(out_dir, "muscle_skeletal_target_regions_qc.tsv")
 
 # window sizes
 PAD_TSS_CORE   = 2_000
@@ -259,7 +259,7 @@ def load_testis_eqtls(parquet_path: str) -> pd.DataFrame:
 
 try:
     eqtl_df = load_testis_eqtls(eqtl_parquet)
-    print(f"[INFO] Loaded Testis eQTL rows: {len(eqtl_df)}")
+    print(f"[INFO] Loaded muscle_skeleta eQTL rows: {len(eqtl_df)}")
 except Exception as e:
     print(f"[WARN] Could not parse eQTL parquet: {e}")
     eqtl_df = pd.DataFrame(columns=["chr","pos","gene_id","gene_symbol"])

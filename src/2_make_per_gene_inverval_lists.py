@@ -1,7 +1,7 @@
 import os, glob, pandas as pd
 
-IN_DIR  = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/intermediate/primary_files_hail_testis"
-OUT_TSV = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/intermediate/testis_variants_all.tsv.gz"
+IN_DIR  = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/intermediate/primary_files_hail_muscle_skeletal"
+OUT_TSV = "/Users/markus/university/ML-in-biotech-CB206V-ws25/data/intermediate/muscle_skeletal_variants_all.tsv.gz"
 
 REQUIRED = {"CHROM","POS","REF","ALT"}
 
